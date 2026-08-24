@@ -1,40 +1,31 @@
-# ==========================================
-# Python Project 1 - To-Do List
-# DecodeLabs Industrial Training
-# ==========================================
+# To-Do List Project
 
 tasks = []
 
+while True:
+    print("\n===== TO-DO LIST =====")
+    print("1. Add Task")
+    print("2. View Tasks")
+    print("3. Exit")
 
-def add_task():
-    task = input("Enter your task: ").strip()
+    choice = input("Enter your choice: ")
 
-    if task:
+    if choice == "1":
+        task = input("Enter your task: ")
         tasks.append(task)
-        print("\nTask added successfully!")
+        print("Task added successfully!")
+
+    elif choice == "2":
+        print("\nYour Tasks:")
+        for task in tasks:
+            print("-", task)
+
+    elif choice == "3":
+        print("Thank you for using To-Do List!")
+        break
+
     else:
-        print("\nTask cannot be empty.")
-
-
-def view_tasks():
-    if not tasks:
-        print("\nNo tasks available.")
-        return
-
-    print("\n========== YOUR TASKS ==========")
-
-    for i, task in enumerate(tasks, start=1):
-        print(f"{i}. {task}")
-
-
-def main():
-    while True:
-        print("\n==============================")
-        print("        TO-DO LIST")
-        print("==============================")
-        print("1. Add Task")
-        print("2. View Tasks")
-        print("3. Exit")
+        print("Invalid choice. Please try again.")        print("3. Exit")
 
         choice = input("\nEnter your choice: ").strip()
 
